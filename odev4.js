@@ -15,21 +15,34 @@ const input = {
         ["Brenden Martinez", "Volutpat Nunc Associates", "iaculis@estMauris.org", "24/03/2021", "British Indian Ocean Territory", "Colwood"]]
 }
 
-const sampleoutput = [
-    {
-        "Name Surname": "Hyacinth Vincent",
-        "Company": "Duis Corporation",
-        "Email": "iaculis.enim@magnaCrasconvallis.ca",
-        "Date": "28/06/2022",
-        "Country": "Eritrea",
-        "City": "Lyubertsy"
-    },
-    {
-        "Name Surname": "Brenden Martinez",
-        "Company": "olutpat Nunc Associates",
-        "Email": "iaculis@estMauris.org",
-        "Date": "24/03/2021",
-        "Country": "British Indian Ocean Territory",
-        "City": "Colwood"
-    }
+const col=input.cols
+const row=input.data
+const result={}
+const sampleoutput=row.map((input)=>
+{
+    input.forEach((column, colId)=>
+    result[col[colId]]=column
+    )
+    return result
+})
+console.log(sampleoutput)
+
+//çıktısı--->
+//node odev4.js
+[
+  {
+    'Name Surname': 'Brenden Martinez',
+    Company: 'Volutpat Nunc Associates',
+    Email: 'iaculis@estMauris.org',
+    Date: '24/03/2021',
+    Country: 'British Indian Ocean Territory',
+  },
+  {
+    'Name Surname': 'Brenden Martinez',
+    Company: 'Volutpat Nunc Associates',
+    Email: 'iaculis@estMauris.org',
+    Date: '24/03/2021',
+    Country: 'British Indian Ocean Territory',
+    City: 'Colwood'
+  }
 ]
