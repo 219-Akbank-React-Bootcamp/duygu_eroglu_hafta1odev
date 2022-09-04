@@ -240,6 +240,20 @@ const array = [
     },
 ]
 
+
+Array.prototype.groupByCustom = function (search){
+  const map = new Map();
+  array.forEach((item) => {
+       const key = search(item);
+       const characters = map.get(key);
+       if (!characters) map.set(key,[item]);
+       else characters.push(item);
+  });
+  return map;
+}
+console.log(array.groupByCustom((item)=>item.name[0]))
+console.log(array.groupByCustom((item)=>item.gender))
+
 //örnek çıktı array.groupByCustom(item=>item.gender) için
 /*
     {
